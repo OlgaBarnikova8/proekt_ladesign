@@ -1,0 +1,71 @@
+/*Burger*/
+@media (max-width: 768px) {
+    body.lock {
+        overflow: hidden;
+    }
+} 
+
+.icon-menu {
+    display: none;    
+}
+
+@media(max-width: 767.98px) {
+    .icon-menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;    
+    }
+    span {
+        transition: all 0.3s ease 0s;
+        top: calc(50% - 1px);
+        left: 0px;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #FFFFFF;;        
+    }   
+    span:first-child {
+        top: 0px;                
+    }
+    span:last-child {
+        top: auto;
+        bottom: 0px;
+    }  
+
+    .icon-menu.active > span {        
+        transform: scale(0);        
+    }    
+    .icon-menu.active > span:first-child {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+    }
+    .icon-menu.active > span:last-child {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);        
+    }        
+}
+
+@media (max-width: 767.98px) {
+    .menu__body {
+        transform: translate(0px, -100%);
+        transition: transform 0.8s ease 0s;   
+        position: fixed;
+        align-items: flex-start;              
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        padding: 100px 10px 0px 10px;   
+        background-color: rgba(255, 255, 255, 0.8);     
+    }
+
+    .menu__body.active {
+        transform: translate(0px, 0%);                          
+    }             
+}
